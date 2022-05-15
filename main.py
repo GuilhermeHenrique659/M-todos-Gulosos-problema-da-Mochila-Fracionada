@@ -37,8 +37,31 @@ print(carga_total)
 print("valor da mochilha: {}".format(round(valor_mochila,2)) )  
 
 
-print("-------Algoritmo força bruta mochila")
-tempo_ini = time.time()
-print(mochila_forca_bruta(itens,n,totalmochila))
-tempo_fim = time.time()
+# print("-------Algoritmo força bruta mochila")
+# tempo_ini = time.time()
+# print(mochila_forca_bruta(itens,n,totalmochila))
+# tempo_fim = time.time()
 
+print("-----algortimo guloso e bruta-----------")
+i = 0
+itens2 = []
+for dado in dados:
+  if dado['Weight'] != 0:
+    itens2.append(Item(dado['Weight'],dado['Gold'],dado['Name']))
+    i = i +1
+    if i == 30:
+      break
+
+n2 = len(itens2)
+mochila.clear()
+mochila = mochila_fracionada(itens2,n2, totalmochila)
+valor_mochila2 = 0
+for item in mochila:
+    valor_mochila2 = valor_mochila2 + item.valor
+
+
+print("valor da mochilha: {}".format(round(valor_mochila2,2)) )  
+tempo_ini2 = time.time()
+print(mochila_forca_bruta(itens2,n2,totalmochila))
+tempo_fim2 = time.time()
+print(tempo_fim2-tempo_ini2)

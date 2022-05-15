@@ -1,4 +1,3 @@
-
 def mochila_fracionada(lista_ordenada:list, n, totalmochila):
     lista_ordenada.sort(reverse=True)
     carga = 0
@@ -15,7 +14,6 @@ def mochila_fracionada(lista_ordenada:list, n, totalmochila):
         item_pegados.append(lista_ordenada[i])
         carga = carga + carga_restante/lista_ordenada[i].peso
       i = i + 1
-    print(carga)
     return item_pegados
 
 
@@ -30,4 +28,4 @@ def print_mochila(mochila):
         carga_total = carga_total + item.peso
 
     print(carga_total)
-    print("valor da mochilha: {}".format(round(valor_mochila,2)) )  
+    print("valor da mochilha: {}".format(round(valor_mochila,2)) )
