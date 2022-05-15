@@ -1,4 +1,4 @@
-from mochilaFracionada import mochila_fracionada
+from mochilaFracionada import mochila_fracionada, print_mochila
 from mochilaForcabruta import mochila_forca_bruta
 from Item import Item
 import time
@@ -11,14 +11,14 @@ with open("skyrim_itens.json", encoding='utf-8') as skyrim_itens:
 
 itens = []
 for dado in dados:
-  itens.append(Item(dado['Weight'],dado['Gold'],dado['Name']))
+  if dado['Weight'] != 0:
+    itens.append(Item(dado['Weight'],dado['Gold'],dado['Name']))
 
 print(len(itens))
 
 
 totalmochila=300
 n = len(itens)
-
 
 print("-----Algoritmo guloso para mochila fracionada-----------")
 tempo_ini = time.time()

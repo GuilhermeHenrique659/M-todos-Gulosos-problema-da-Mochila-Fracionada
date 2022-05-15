@@ -17,3 +17,17 @@ def mochila_fracionada(lista_ordenada:list, n, totalmochila):
       i = i + 1
     print(carga)
     return item_pegados
+
+
+
+def print_mochila(mochila):
+    valor_mochila = 0
+    carga_total = 0
+    for item in mochila:
+        print("item: {:<30} peso: {:<5} de {:<5} valor: {:<5} de {:<5}".format(item.item, round(item.get_valor(),2), 
+                                                            item.peso_aux,round(item.get_valor(),2), item.valor_aux))
+        valor_mochila = valor_mochila + item.valor
+        carga_total = carga_total + item.peso
+
+    print(carga_total)
+    print("valor da mochilha: {}".format(round(valor_mochila,2)) )  

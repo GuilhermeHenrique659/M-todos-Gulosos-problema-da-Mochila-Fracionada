@@ -12,3 +12,4 @@ class Item:
     
     def get_valor(self):
         return (self.valor*100)/self.valor_aux
+
